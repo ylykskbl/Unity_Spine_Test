@@ -14,19 +14,16 @@ Unity game project demonstrating Spine animation reuse (sharing one skeleton/ani
 
 ### License Activation
 
-Unity **requires** an activated license before any batch-mode operations (compile, test, build). Two approaches:
+Unity **requires** an activated license before any batch-mode operations (compile, test, build).
 
-**Option A – CLI activation (recommended for CI/headless):**
+**CLI activation (recommended for CI/headless):**
 ```bash
-UNITY=/home/ubuntu/Unity/Hub/Editor/2022.3.61f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client
-$UNITY --activate-all --include-personal --username "$UNITY_EMAIL" --password "$UNITY_PASSWORD"
+UNITY_LC="/home/ubuntu/Unity/Hub/Editor/2022.3.61f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client"
+$UNITY_LC --activate-all --include-personal --username "$UNITY_EMAIL" --password "$UNITY_PASSWORD"
 ```
 Secrets needed: `UNITY_EMAIL`, `UNITY_PASSWORD` (Unity ID account credentials).
 
-**Option B – Manual ULF file:**
-1. Generate `.alf`: `$UNITY_PATH -batchmode -nographics -createManualActivationFile`
-2. Upload `.alf` at https://license.unity3d.com/manual → download `.ulf`
-3. Place at `~/.local/share/unity3d/Unity/Unity_lic.ulf`
+**Note:** Unity no longer supports manual activation of Personal licenses via the web portal. The CLI approach above is the recommended way.
 
 ### Batch-Mode Commands
 
